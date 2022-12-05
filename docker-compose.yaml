@@ -11,7 +11,7 @@ services:
     depends_on:
       - flask
   flask:
-    image: "aquaman/flask:1.0"
+    image: "chensasha/flask:1.0"
     container_name: flask
     environment:
       - FLASK_DEBUG=True
@@ -32,3 +32,4 @@ services:
       - "5432:5432"
     volumes:
       - ./data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
